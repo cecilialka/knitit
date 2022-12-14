@@ -1,5 +1,108 @@
+.appName {
+  color: black;
+  position: absolute;
+  top:0;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  font-size: 18px;
+  padding: 10px;
+  font-style: italic;
+  background-color: lightblue;
+}
+
 .container {
+  margin-top: 100px;
   padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+}
+
+.imagecontainer {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: 200px 200px 200px 200px;
+  grid-template-rows: 150px auto 150px; 
+  column-gap: 10px;
+  row-gap: 70px;
+  color: black;
+  overflow: scroll;
+  align-items: start;
+}
+
+.itemcontainer {
+  padding: 10px;
+  border-radius: 8%;
+  border: solid black 2px;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  overflow: scroll;
+}
+
+.itemcontainerplaceholder {
+  width: 200px;
+  height: 200px;
+  border: none;
+}
+
+.topiccontainer {
+  padding: 10px;
+  border-radius: 8%;
+  border: solid black 2px;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+
+.optioncontainer {
+  width: 840px;
+  height: 200x;
+  display: flex;
+  flex-direction: row;
+}
+
+.textstyle {
+  color: black;
+}
+
+.listpadding {
+  padding-left: 15px;
+}
+
+.key {
+  font-weight: bold;
+  text-align: left;
+  margin-top: 4px;
+  width: 100%;
+}
+
+.value {
+  font-weight: normal;
+}
+
+.showmorebutton {
+  background-color: lightblue;
+  color: white;
+  border: 1px solid white;
+  border-radius: 4px;;
+}
+
+.searchitemtext{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 .main {
@@ -106,6 +209,18 @@
 .logo {
   height: 1em;
   margin-left: 0.5rem;
+}
+
+.cardheader {
+  font-weight: bold;
+  text-align: left;
+  margin-top: 2px;
+  margin-bottom: 5px;
+  width: 100%;
+}
+
+.link {
+  text-decoration: underline;
 }
 
 @media (max-width: 600px) {
