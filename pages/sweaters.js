@@ -1,4 +1,3 @@
-import PocketBase from "pocketbase";
 import { useState } from "react";
 import styles from "../styles/Home.module.css";
 import MenuItem from "@mui/material/MenuItem";
@@ -24,8 +23,6 @@ const MenuProps = {
     },
   },
 };
-
-const pb = new PocketBase("http://127.0.0.1:8090");
 
 const needles = [1, 2, 3, 3.5, 4, 4.5, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
 const difficulty = [1, 2, 3, 4, 5]

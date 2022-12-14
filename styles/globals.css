@@ -19,6 +19,15 @@ li {
   text-align: start;
 }
 
+input {
+  background: white;
+    border-radius: 3px;
+    border: 2px solid black;
+    width: 200px;
+    height: 40px;
+    color: black;
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;

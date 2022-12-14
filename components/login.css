@@ -1,0 +1,6 @@
+.logincontainer {
+    display: flex;
+    flex-direction: row;
+    width: 40%;
+    height: 60%;
+}
