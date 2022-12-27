@@ -10,9 +10,6 @@ export default function SearchItem({sweaterItem}) {
     const onShowYarn = () => {
         setShowYarn(!showYarn);
     }
-
-    console.log(sweater);
-
     return (
         <div className={styles.itemcontainer}>
        

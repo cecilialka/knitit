@@ -2,9 +2,9 @@ import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import styles from "../styles/Home.module.css";
 import { useState, useRef } from "react";
 import { auth, db } from "../firebase";
-import { doc, addDoc, collection } from "firebase/firestore";
+import { doc, setDoc, collection } from "firebase/firestore";
 
-export default function SignUpForm({ email, password }) {
+export default function SignUpForm() {
   const emailRef = useRef();
   const passwordRef = useRef();
   const firstnameRef = useRef();
@@ -16,21 +16,28 @@ export default function SignUpForm({ email, password }) {
     const password = passwordRef.current.value;
     const firstname = firstnameRef.current.value;
     const lastname = lastnameRef.current.value;
+
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
-        const dbRef = collection(db, "users");
+        //console.log(userCredential)
+        // const dbRef = collection(db, "users");
         const userData = {
           name: firstname,
           lastname: lastname,
           email: email,
           hasAdminRights: false
         };
-        addDoc(dbRef, userData);
+        //Set doc name to user email
+        setDoc(doc(db, "users", email), {
+          userData
+        });
       })
       .catch((error) => {
         console.log("Somethen went wrong while adding the user to firebase");
       });
   };
+
+
   return (
     <div className={styles.logininfo}>
       <form>

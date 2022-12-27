@@ -2,15 +2,17 @@ import { getAuth, onAuthStateChanged } from "firebase/auth";
 import LoginForm from "../components/loginForm";
 import SignUpForm from "../components/signupForm";
 import styles from "../styles/Home.module.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { auth } from "../firebase";
+import Router from 'next/router';
+import {db} from "../firebase";
+import { getDoc, doc } from "firebase/firestore";
 
 
-export default function Admin({}) {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const user = auth.currentUser;
+export default function LogIn({userProfile}) {
+  const [user, setUser] = useState(auth.currentUser);
   const [hasLogin, setHasLogin] = useState(true);
+  const [userLoggedIn, setUserLoggedIn] = useState(false);
 
   const handleSignUpClick = (event) => {
     setHasLogin(!hasLogin)
@@ -18,7 +20,7 @@ export default function Admin({}) {
 
   return (
     <div className={styles.logincontainer}>
-    {hasLogin ? <LoginForm email={email} password={password}/> : <SignUpForm email={email} password={password} /> }
+    {hasLogin ? <LoginForm/> : <SignUpForm/> }
     <button onClick={handleSignUpClick} className={styles.signupbutton}>{hasLogin ? "Sign up" : "Login"}</button>
     </div>
   );

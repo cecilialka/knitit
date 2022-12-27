@@ -28,7 +28,6 @@ const needles = [1, 2, 3, 3.5, 4, 4.5, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
 const difficulty = [1, 2, 3, 4, 5]
 
 export default function Sweaters({ sweaters, yarns }) {
-  console.log(sweaters)
   const [allSweaters, setAllSweaters] = useState(sweaters);
   const [filteredSweaters, setFilteredSweaters] = useState(allSweaters);
   const [allYarnTypes, setAllYarnTypes] = useState(yarns);
@@ -86,7 +85,7 @@ export default function Sweaters({ sweaters, yarns }) {
             input={<OutlinedInput label="Needle size" />}
             renderValue={(selected) => (
               <Box sx={{ display: "flex", flexWrap: "wrap", gap: 0.5 }}>
-                {selected.map((value) => (
+                {selected.map((value, i) => (
                   <Chip key={value} label={value} />
                 ))}
               </Box>
