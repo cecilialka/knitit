@@ -1,10 +1,7 @@
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { signInWithEmailAndPassword } from "firebase/auth";
 import styles from "../styles/Home.module.css";
-import { useState, useRef} from "react";
+import { useRef} from "react";
 import { auth } from "../firebase";
-import Router from 'next/router';
-
-
 
 export default function LoginForm({userProfile}) {
 

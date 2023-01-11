@@ -11,7 +11,7 @@ import FlareIcon from "@mui/icons-material/Flare";
 import SearchItem from "../components/searchItem";
 import { collection, getDocs } from "firebase/firestore"; 
 import {db} from "../firebase";
-
+import {needles} from '../models/NeedleSizes';
 
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
@@ -24,7 +24,6 @@ const MenuProps = {
   },
 };
 
-const needles = [1, 2, 3, 3.5, 4, 4.5, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
 const difficulty = [1, 2, 3, 4, 5]
 
 export default function Sweaters({ sweaters, yarns }) {
